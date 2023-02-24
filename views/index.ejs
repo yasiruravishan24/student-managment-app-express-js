@@ -1,0 +1,59 @@
+<div class="container page">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8 wrapper mt-5 p-3 rounded">
+            <h3 class="text-black">Student Information</h3>
+            <form class="row g-3 needs-validation" action="" method="POST" novalidate>
+                <div class="col-md-12">
+                    <label for="validationCustom01" class="form-label">Full name</label>
+                    <input type="text" name="full_name" class="form-control  <% if (typeof errors !== 'undefined' && typeof errors['full_name'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof data !== 'undefined' && typeof data['full_name'] !== 'undefined') { %><%- data['full_name'] %><% } %>">
+                    <% if (typeof errors !== 'undefined' && typeof errors['full_name'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['full_name'] %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="validationCustom02" class="form-label">Registration No</label>
+                    <input type="text" name="reg_no" class="form-control <% if (typeof errors !== 'undefined' && typeof errors['reg_no'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof data !== 'undefined' && typeof data['reg_no'] !== 'undefined') { %><%- data['reg_no'] %><% } %>">
+                    <% if (typeof errors !== 'undefined' && typeof errors['reg_no'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['reg_no'] %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom02" class="form-label">Date of birth</label>
+                    <input type="text" id="dob-input" name="dob" class="form-control keyboard-block <% if (typeof errors !== 'undefined' && typeof errors['dob'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof data !== 'undefined' && typeof data['dob'] !== 'undefined') { %><%- data['dob'] %><% } %>">
+                    <% if (typeof errors !== 'undefined' && typeof errors['dob'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['dob'] %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02" class="form-label">Age</label>
+                    <input type="text" name="age" class="form-control <% if (typeof errors !== 'undefined' && typeof errors['age'] !== 'undefined') { %> is-invalid <% } %>" id="age-input" value="<% if (typeof data !== 'undefined' && typeof data['age'] !== 'undefined') { %><%- data['age'] %><% } %>" readonly>
+                    <% if (typeof errors !== 'undefined' && typeof errors['age'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['age'] %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="col-md-8">
+                    <label for="validationCustom03" class="form-label">Favourite sport</label>
+                    <input type="text" name="sport" class="form-control <% if (typeof errors !== 'undefined' && typeof errors['sport'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof data !== 'undefined' && typeof data['sport'] !== 'undefined') { %><%- data['sport'] %><% } %>">
+                    <% if (typeof errors !== 'undefined' && typeof errors['sport'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['sport'] %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

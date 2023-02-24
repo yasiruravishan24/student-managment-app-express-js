@@ -1,0 +1,70 @@
+<div class="container page">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8 wrapper mt-4 p-3 rounded">
+            <h3 class="text-black">Search Student</h3>
+            <form class="row g-3 needs-validation pb-2" action="" method="GET" novalidate>
+                <div class="col-md-12">
+                    <div class="input-group mb-3">
+                        <input type="text" name="reg_no" class="form-control <% if (typeof errors !== 'undefined' && typeof errors['reg_no'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof reg_no !== 'undefined') { %><%- reg_no %><% } %>" placeholder="Student No" aria-label="Student No" aria-describedby="button-addon2" >
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                    <% if (typeof errors !== 'undefined' && typeof errors['reg_no'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                            <%- errors['reg_no'] %>
+                        </div>
+                    <% } %>
+                    </div>
+                </div>
+            </form>
+            <% if (typeof student !== 'undefined') { %>
+                <% if (typeof student[0] !== 'undefined') { %>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th scope="row">Full Name</th>
+                            <td><%- student[0].full_name %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Register No</th>
+                            <td><%- student[0].reg_no %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date of birth</th>
+                            <td><%- student[0].dob.toISOString().split('T')[0] %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Age</th>
+                            <td><%- student[0].age %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sport</th>
+                            <td><%- student[0].sport %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Credit Card No</th>
+                            <td>************<%- student[0].card_no.replaceAll('-', '').substring(12, 16) %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Expiry date</th>
+                            <td><%- student[0].expire_date.replace(/[0-9]/g,'*') %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CVV</th>
+                            <td><%- student[0].cvv.toString().replace(/[0-9]/g,'*') %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cardholder Name</th>
+                            <td><%- student[0].cardholder_name %></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <% } else { %>
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        Student not found !
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                <% } %>
+              <% } %>
+        </div>
+    </div>
+</div>
+

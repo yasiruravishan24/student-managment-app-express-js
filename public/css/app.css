@@ -1,0 +1,19 @@
+body {
+    background-color: rgba(220, 220, 220, 0.67);
+    overflow: hidden;
+    background-image: url('/img/bg-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.page {
+    height: 100vh;
+}
+.wrapper {
+    background-color: white;
+}
+
+.page-not-found-title {
+    color: red;
+    font-size: 72px;
+}

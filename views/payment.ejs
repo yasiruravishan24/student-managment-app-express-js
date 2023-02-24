@@ -1,0 +1,50 @@
+<div class="container page">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8 wrapper mt-5 p-3 rounded">
+            <h3 class="text-black">Payment Information</h3>
+            <form class="row g-3 needs-validation" action="" method="POST" novalidate>
+                <div class="col-md-12">
+                    <label for="validationCustom01" class="form-label">Credit Card Number</label>
+                    <input placeholder="XXXX-XXXX-XXXX-XXXX" type="text" name="card_no" id="card_no" class="form-control  <% if (typeof errors !== 'undefined' && typeof errors['card_no'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof data !== 'undefined' && typeof data['card_no'] !== 'undefined') { %><%- data['card_no'] %><% } %>">
+                    <% if (typeof errors !== 'undefined' && typeof errors['card_no'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['card_no'] %>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="validationCustom02" class="form-label">Expiry date</label>
+                    <input type="text" placeholder="MM/YY" name="expire_date" id="expire_date" class="form-control <% if (typeof errors !== 'undefined' && typeof errors['expire_date'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof data !== 'undefined' && typeof data['expire_date'] !== 'undefined') { %><%- data['expire_date'] %><% } %>">
+                    <% if (typeof errors !== 'undefined' && typeof errors['expire_date'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['expire_date'] %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom03" class="form-label">CVV</label>
+                    <input type="text" name="cvv" class="form-control <% if (typeof errors !== 'undefined' && typeof errors['cvv'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof data !== 'undefined' && typeof data['cvv'] !== 'undefined') { %><%- data['cvv'] %><% } %>">
+                    <% if (typeof errors !== 'undefined' && typeof errors['cvv'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['cvv'] %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="col-md-12">
+                    <label for="validationCustom01" class="form-label">Name of the cardholder</label>
+                    <input type="text" name="holder_name" class="form-control  <% if (typeof errors !== 'undefined' && typeof errors['holder_name'] !== 'undefined') { %> is-invalid <% } %>" value="<% if (typeof data !== 'undefined' && typeof data['holder_name'] !== 'undefined') { %><%- data['holder_name'] %><% } %>">
+                    <% if (typeof errors !== 'undefined' && typeof errors['holder_name'] !== 'undefined') { %>
+                        <div class="invalid-feedback">
+                           <%- errors['holder_name'] %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
